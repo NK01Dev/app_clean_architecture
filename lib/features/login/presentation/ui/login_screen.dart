@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart' show GoRouterHelper;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/route/route_name.dart';
-
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
@@ -20,8 +18,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         child: Column(children: [Center(child: Text('Login')),
         IconButton.filled(onPressed: (
             ) {
-          context.goNamed(signUpRoute);
-          debugPrint('ll');
+          context.push('/signup');
+debugPrint('ll');
         }, icon: Icon(Icons.login))]),
       ),
     );

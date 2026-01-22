@@ -16,12 +16,12 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     return Scaffold(
       appBar: AppBar(
         //back button in left
-        leading: IconButton(
-          onPressed: () {
-            context.goNamed(loginRoute);
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     context.goNamed(loginRoute);
+        //   },
+        //   icon: Icon(Icons.arrow_back),
+        // ),
         title: Text('Signup Screen'),
         //title in center
         centerTitle: true,
