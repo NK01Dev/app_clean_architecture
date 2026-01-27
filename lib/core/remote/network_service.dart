@@ -12,7 +12,7 @@ final networkServiceProvider = Provider<Dio>((ref) {
     sendTimeout: Duration(seconds: 30),
   );
   final dio = Dio(options);
-  final NetworkServiceInterceptor = ref.watch(networkServiceInterceptorProvider);
+  final NetworkServiceInterceptor = ref.watch(networkServiceInterceptorProvider(dio));
   dio.interceptors.addAll([HttpFormatter(), NetworkServiceInterceptor]);
   return dio;
 });
