@@ -3,10 +3,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'flutter_secure_storage_provider.dart';
 import 'isecure_storage.dart';
-final secureStorageProvider=Provider<IsecureStorage>((ref){
+final secureStorageProvider=Provider<ISecureStorage>((ref){
   return SecureStorage(ref.watch(flutterSecureStorageProvider));
 });
-final class SecureStorage implements IsecureStorage {
+final class SecureStorage implements ISecureStorage {
   final FlutterSecureStorage _secureStorage;
   SecureStorage(this._secureStorage);
   @override

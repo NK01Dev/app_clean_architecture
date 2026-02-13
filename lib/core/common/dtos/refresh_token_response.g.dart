@@ -9,13 +9,13 @@ part of 'refresh_token_response.dart';
 _RefreshTokenResponse _$RefreshTokenResponseFromJson(
   Map<String, dynamic> json,
 ) => _RefreshTokenResponse(
-  status: json['status'] as String,
   data: Data.fromJson(json['data'] as Map<String, dynamic>),
+  status: (json['status'] as num).toInt(),
 );
 
 Map<String, dynamic> _$RefreshTokenResponseToJson(
   _RefreshTokenResponse instance,
-) => <String, dynamic>{'status': instance.status, 'data': instance.data};
+) => <String, dynamic>{'data': instance.data, 'status': instance.status};
 
 _Data _$DataFromJson(Map<String, dynamic> json) => _Data(
   accessToken: json['accessToken'] as String,

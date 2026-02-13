@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RefreshTokenResponse {
 
- String get status; Data get data;
+ Data get data; int get status;
 /// Create a copy of RefreshTokenResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $RefreshTokenResponseCopyWith<RefreshTokenResponse> get copyWith => _$RefreshTok
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RefreshTokenResponse&&(identical(other.status, status) || other.status == status)&&(identical(other.data, data) || other.data == data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RefreshTokenResponse&&(identical(other.data, data) || other.data == data)&&(identical(other.status, status) || other.status == status));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,data);
+int get hashCode => Object.hash(runtimeType,data,status);
 
 @override
 String toString() {
-  return 'RefreshTokenResponse(status: $status, data: $data)';
+  return 'RefreshTokenResponse(data: $data, status: $status)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $RefreshTokenResponseCopyWith<$Res>  {
   factory $RefreshTokenResponseCopyWith(RefreshTokenResponse value, $Res Function(RefreshTokenResponse) _then) = _$RefreshTokenResponseCopyWithImpl;
 @useResult
 $Res call({
- String status, Data data
+ Data data, int status
 });
 
 
@@ -65,11 +65,11 @@ class _$RefreshTokenResponseCopyWithImpl<$Res>
 
 /// Create a copy of RefreshTokenResponse
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? data = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? data = null,Object? status = null,}) {
   return _then(_self.copyWith(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as Data,
+data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as Data,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 /// Create a copy of RefreshTokenResponse
@@ -163,10 +163,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String status,  Data data)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Data data,  int status)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RefreshTokenResponse() when $default != null:
-return $default(_that.status,_that.data);case _:
+return $default(_that.data,_that.status);case _:
   return orElse();
 
 }
@@ -184,10 +184,10 @@ return $default(_that.status,_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String status,  Data data)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Data data,  int status)  $default,) {final _that = this;
 switch (_that) {
 case _RefreshTokenResponse():
-return $default(_that.status,_that.data);case _:
+return $default(_that.data,_that.status);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -204,10 +204,10 @@ return $default(_that.status,_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String status,  Data data)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Data data,  int status)?  $default,) {final _that = this;
 switch (_that) {
 case _RefreshTokenResponse() when $default != null:
-return $default(_that.status,_that.data);case _:
+return $default(_that.data,_that.status);case _:
   return null;
 
 }
@@ -218,12 +218,12 @@ return $default(_that.status,_that.data);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _RefreshTokenResponse extends RefreshTokenResponse {
-  const _RefreshTokenResponse({required this.status, required this.data}): super._();
+class _RefreshTokenResponse implements RefreshTokenResponse {
+  const _RefreshTokenResponse({required this.data, required this.status});
   factory _RefreshTokenResponse.fromJson(Map<String, dynamic> json) => _$RefreshTokenResponseFromJson(json);
 
-@override final  String status;
 @override final  Data data;
+@override final  int status;
 
 /// Create a copy of RefreshTokenResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -238,16 +238,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RefreshTokenResponse&&(identical(other.status, status) || other.status == status)&&(identical(other.data, data) || other.data == data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RefreshTokenResponse&&(identical(other.data, data) || other.data == data)&&(identical(other.status, status) || other.status == status));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,data);
+int get hashCode => Object.hash(runtimeType,data,status);
 
 @override
 String toString() {
-  return 'RefreshTokenResponse(status: $status, data: $data)';
+  return 'RefreshTokenResponse(data: $data, status: $status)';
 }
 
 
@@ -258,7 +258,7 @@ abstract mixin class _$RefreshTokenResponseCopyWith<$Res> implements $RefreshTok
   factory _$RefreshTokenResponseCopyWith(_RefreshTokenResponse value, $Res Function(_RefreshTokenResponse) _then) = __$RefreshTokenResponseCopyWithImpl;
 @override @useResult
 $Res call({
- String status, Data data
+ Data data, int status
 });
 
 
@@ -275,11 +275,11 @@ class __$RefreshTokenResponseCopyWithImpl<$Res>
 
 /// Create a copy of RefreshTokenResponse
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? data = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? data = null,Object? status = null,}) {
   return _then(_RefreshTokenResponse(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as Data,
+data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as Data,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 
@@ -493,8 +493,8 @@ return $default(_that.accessToken,_that.refreshToken);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _Data extends Data {
-  const _Data({required this.accessToken, required this.refreshToken}): super._();
+class _Data implements Data {
+  const _Data({required this.accessToken, required this.refreshToken});
   factory _Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 
 @override final  String accessToken;
